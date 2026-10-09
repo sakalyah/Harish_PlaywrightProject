@@ -1,0 +1,105 @@
+# First get the storage account resource ID
+az storage account show \
+  --name "pwstrgrrd4320" \
+  --resource-group "rrd" \
+  --query id -o tsv
+
+
+
+
+
+//
+
+  az role assignment create \
+  --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" \
+  --role "Storage Blob Data Contributor" \
+  --scope "$(az storage account show --name pwstrgbhumhasou52a2 --resource-group bhumhasou --query id -o tsv)"
+
+
+Azure Scripts 
+
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> az login
+Select the account you want to log in with. For more information on login with Azure CLI, see https://go.microsoft.com/fwlink/?linkid=2271136
+
+Retrieving tenants and subscriptions for the selection...
+
+[Tenant and subscription selection]
+
+No     Subscription name     Subscription ID                       Tenant
+-----  --------------------  ------------------------------------  -----------------
+[1] *  Azure subscription 1  2b9949a9-a801-4601-8206-888810a93ecb  Default Directory
+
+The default is marked with an *; the default tenant is 'Default Directory' and subscription is 'Azure subscription 1' (2b9949a9-a801-4601-8206-888810a93ecb).
+
+Select a subscription and tenant (Type a number or Enter for no changes): 
+
+Tenant: Default Directory
+Subscription: Azure subscription 1 (2b9949a9-a801-4601-8206-888810a93ecb)
+
+[Announcements]
+With the new Azure CLI login experience, you can select the subscription you want to use more easily. Learn more about it and its configuration at https://go.microsoft.com/fwlink/?linkid=2271236
+
+If you encounter any problem, please open an issue at https://aka.ms/azclibug
+
+[Warning] The login output has been updated. Please be aware that it no longer displays the full list of available subscriptions by default.
+
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> $env:PLAYWRIGHT_SERVICE_URL="wss://eastus.api.playwright.microsoft.com/playwrightworkspaces/7935432c-8251-4ba4-9c46-0fc679424106/browsers"
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> 
+ *  History restored 
+
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> az role assignment create \
+>>   --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" \
+>>   --role "Storage Blob Data Contributor" \
+>>   --scope "$(az storage account show --name pwstrgbhumhasou52a2 --resource-group bhumhasou --query id -o tsv)"
+At line:2 char:5
++   --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" \
++     ~
+Missing expression after unary operator '--'.
+At line:2 char:5
++   --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" \
++     ~~~~~~~~
+Unexpected token 'assignee' in expression or statement.
+At line:3 char:5
++   --role "Storage Blob Data Contributor" \
++     ~
+Missing expression after unary operator '--'.
+At line:3 char:5
++   --role "Storage Blob Data Contributor" \
++     ~~~~
+Unexpected token 'role' in expression or statement.
+At line:4 char:5
++   --scope "$(az storage account show --name pwstrgbhumhasou52a2 --res ...
++     ~
+Missing expression after unary operator '--'.
+At line:4 char:5
++   --scope "$(az storage account show --name pwstrgbhumhasou52a2 --res ...
++     ~~~~~
+Unexpected token 'scope' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+ 
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> az role assignment create \  --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" \ --role "Storage Blob Data Contributor" \ --scope "$(az storage account show --name pwstrgbhumhasou52a2 --resource-group bhumhasou --query id -o tsv)"                                                                                                                               
+unrecognized arguments: \ \ \                                                                                    
+
+https://aka.ms/cli_ref
+Read more about the command in reference docs
+PS C:\PLAYWRIGHT_AUTOMATION_HARISH> az role assignment create --assignee "aa758ea6-14bc-4391-b30a-ec8404bd38da" --role "Storage Blob Data Contributor" --scope "$(az storage account show --name pwstrgbhumhasou52a2 --resource-group bhumhasou --query id -o tsv)"   
+{                                            
+  "condition": null,                                                                                             
+  "conditionVersion": null,
+  "createdBy": null,
+  "createdOn": "2026-10-07T07:04:51.697652+00:00",
+  "delegatedManagedIdentityResourceId": null,
+  "description": null,
+  "id": "/subscriptions/2b9949a9-a801-4601-8206-888810a93ecb/resourceGroups/Bhumhasou/providers/Microsoft.Storage/storageAccounts/pwstrgbhumhasou52a2/providers/Microsoft.Authorization/roleAssignments/2b0cee10-4583-4b06-ba7e-2e2dfb08ea37",
+  "name": "2b0cee10-4583-4b06-ba7e-2e2dfb08ea37",
+  "principalId": "aa758ea6-14bc-4391-b30a-ec8404bd38da",
+  "principalType": "User",
+  "resourceGroup": "Bhumhasou",
+  "roleDefinitionId": "/subscriptions/2b9949a9-a801-4601-8206-888810a93ecb/providers/Microsoft.Authorization/roleDefinitions/ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+  "scope": "/subscriptions/2b9949a9-a801-4601-8206-888810a93ecb/resourceGroups/Bhumhasou/providers/Microsoft.Storage/storageAccounts/pwstrgbhumhasou52a2",
+  "systemData": null,
+  "type": "Microsoft.Authorization/roleAssignments",
+  "updatedBy": "aa758ea6-14bc-4391-b30a-ec8404bd38da",
+  "updatedOn": "2026-10-07T07:04:53.518788+00:00"
+}

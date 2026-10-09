@@ -1,0 +1,4 @@
+TS is superscript of JS . Change extension and it becomes typescript file
+ts= JS + Additional features . these additional makes TS interesting .Type Annotations, Quality ,Readability , maintainability
+These additional features are nothing but having all data types like String , int, float
+Cannot run TS at all . Convert TS to JS and run on Node
